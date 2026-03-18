@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>meu primeiro site</title>
+</head>
+<body>
+    <style>
+    body {
+      background: #111;
+      color: rgb(255, 255, 255);
+    }
+
+  </style>
+</head>
+<body>
+
+<div id="relogio">00:00:00:00</div>
+
+
+
+<script>
+function atualizarRelogio() {
+  const agora = new Date();
+
+  let horas = agora.getHours();
+  let minutos = agora.getMinutes();
+  let segundos = agora.getSeconds();
+  let milissegundos = agora.getMilliseconds();
+
+  horas = horas < 10 ? "0" + horas : horas;
+  minutos = minutos < 10 ? "0" + minutos : minutos;
+  segundos = segundos < 10 ? "0" + segundos : segundos;
+  milissegundos = milissegundos < 10 ? "00" + milissegundos : milissegundos < 100 ? "0" + milissegundos : milissegundos;
+
+  const horaAtual = horas + ":" + minutos + ":" + segundos + ":" + milissegundos  ;
+
+  document.getElementById("relogio").innerText = horaAtual;
+}
+
+setInterval(atualizarRelogio, 1);
+</script>
+</body>
+</html>
